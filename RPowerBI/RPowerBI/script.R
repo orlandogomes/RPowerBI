@@ -4,7 +4,7 @@
 setwd("seu diretorio")
 
 #Packages
-aiquality <- airquality
+aiquality <- airquality   
 library(ggplot2)
 library(dplyr)
 
