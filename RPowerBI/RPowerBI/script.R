@@ -27,23 +27,23 @@ ggplot(airquality, aes(x = Temp, y = Ozone)) +
   theme_bw()
 
 
-#Plot II (Raios Solares - Mês)
+#Plot II (Raios Solares - MÃªs)
 ggplot(airquality, aes(Solar.R)) +
   geom_density() +
   facet_grid(~Month) +
-  ggtitle("Raios Solares - Mês") +
+  ggtitle("Raios Solares - MÃªs") +
   labs(x = "Raios Solates", y = "Densidade") +
   theme_bw()
 
 #Plot III (Temp)
 ggplot(airquality, aes(x = Temp)) +
   geom_bar() +
-  ggtitle("Medição da Temperatura") +
+  ggtitle("MediÃ§Ã£o da Temperatura") +
   labs(x = "Temperatura", y = "Quantidade") +
   theme_bw()
 
 
-#Divisão de Bases - Mês
+#DivisÃ£o de Bases - MÃªs
 may_data <- airquality %>% select(Month, Temp, Wind) %>%
   filter(Month == "5") %>%
   mutate(Month = replace(Month, Month == 5, "Maio"))
@@ -71,4 +71,4 @@ september_data <- airquality %>% select(Month, Temp, Wind) %>%
 airquality <- airquality %>%
   arrange(Temp) %>%
   group_by(Month) %>%
-  mutate(MediaTemp = format(mean(TTem), digits = 2))
+  mutate(MediaTemp = format(mean(Temp), digits = 2))
